@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class BirdAI : MonoBehaviour
@@ -9,18 +10,21 @@ public class BirdAI : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject bird;
-    //public Rigidbody2D rb;
     Vector2 direction;
-
     Rigidbody2D rb;
-    public float x = UnityEngine.Random.Range(1f, 2f);
-    public float z = UnityEngine.Random.Range(1f, 2f);
     public float speed;
+    private Camera camera;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         direction = Vector2.one.normalized;
+        camera = Camera.main;
+    }
+    private void OnMouseDown()
+    {
+        Debug.Log("Mouse Click Detected");
+        GameController.score += 10;
     }
 
     // Update is called once per frame
@@ -39,5 +43,7 @@ public class BirdAI : MonoBehaviour
             direction.x = -direction.x;
         }
     }
+
+
 }
 

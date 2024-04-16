@@ -10,11 +10,13 @@ public class GameController : MonoBehaviour
     public GameObject Bird;
     public Transform Parent;
     public Text timerText;
+    public Text scoreText;
     public float maxBullets;
     public float maxBirds;
     public float currentBirds;
     public float time = 0;
     public float counter = 0;
+    public static float score;
     float roundTime;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,8 @@ public class GameController : MonoBehaviour
         {
             time += Time.deltaTime;
             roundTime = Mathf.RoundToInt(time);
-            timerText.text = roundTime.ToString();
+            timerText.text = roundTime.ToString() + " Sec";
+            scoreText.text = "Score: " + score.ToString();
             counter += Time.deltaTime;
             //Debug.Log(time);
             if (currentBirds < maxBirds && counter > 3)

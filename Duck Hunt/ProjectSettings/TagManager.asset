@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paddle
   - Wall
+  - Bird
   layers:
   - Default
   - TransparentFX
