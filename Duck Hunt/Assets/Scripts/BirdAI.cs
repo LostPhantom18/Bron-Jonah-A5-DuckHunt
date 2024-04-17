@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 //using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 //using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -18,14 +18,19 @@ public class BirdAI : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     private bool isHit = false;
     Vector2 direction;
-
-    Rigidbody2D rb;
     public float speed;
+    private Camera camera;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         direction = Vector2.one.normalized;
+        camera = Camera.main;
+    }
+    private void OnMouseDown()
+    {
+        Debug.Log("Mouse Click Detected");
+        GameController.score += 10;
     }
     private void OnMouseDown()
     {
@@ -63,6 +68,5 @@ public class BirdAI : MonoBehaviour
                 direction.x = -direction.x;
             }
         }
-    }   
 }
 
