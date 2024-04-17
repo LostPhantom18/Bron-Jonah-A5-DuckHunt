@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void runGame()
+    void runGame() // Runs the game and then runs the level one function 
     {
         time += Time.deltaTime;
         roundTime = Mathf.RoundToInt(time);
@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
             return;
         }
     }
-    void levelOne()
+    void levelOne() // Simply loops how many ducks will spawn. For level one this is 3 ducks
     {
         if (currentBirds < maxBirds && counter > 3)
         {
@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
             createBird();
         }
     }
-    void createBird()
+    void createBird() // Creates the bird using prefab
     {
 
         Instantiate(Bird, new Vector3(0, 0, 0), Quaternion.identity, Parent);

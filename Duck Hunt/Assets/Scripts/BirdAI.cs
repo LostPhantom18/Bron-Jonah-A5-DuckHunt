@@ -11,6 +11,7 @@ public class BirdAI : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    // All my variables
     public GameObject bird;
     public Rigidbody2D rigidbody2d;
     public Rigidbody2D rb;
@@ -28,7 +29,7 @@ public class BirdAI : MonoBehaviour
         direction = Vector2.one.normalized;
         camera = Camera.main;
     }
-    private void OnMouseDown()
+    private void OnMouseDown() // This is click detection on ducks
     {
         Debug.Log("Mouse Click Detected");
         
@@ -51,7 +52,7 @@ public class BirdAI : MonoBehaviour
             rb.velocity = direction * speed;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) // Redirects ducks using collision enter
     {
         if (isHit == false)
         {
