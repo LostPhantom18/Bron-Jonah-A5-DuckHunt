@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public float currentBirds = 0;
     public float time = 0;
     public float counter = 0;
+    public static float score;
     float roundTime;
     bool levelOneCompleted = false;
     // Start is called before the first frame update
