@@ -127,6 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 7815167478336663654}
+  rigidbody2d: {fileID: -1396705455020586356}
+  rb: {fileID: -1396705455020586356}
+  boxcollider2d: {fileID: -7162457315673344538}
+  transform: {fileID: 6466913969730908188}
+  spriteRenderer: {fileID: 4794138917639932358}
   speed: 5
 --- !u!61 &-7162457315673344538
 BoxCollider2D:
