@@ -13,6 +13,7 @@ public class BirdAI : MonoBehaviour
 
     public GameObject bird;
     public Rigidbody2D rigidbody2d;
+    public Rigidbody2D rb;
     public BoxCollider2D boxcollider2d;
     public Transform transform;
     public SpriteRenderer spriteRenderer;
@@ -26,11 +27,6 @@ public class BirdAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         direction = Vector2.one.normalized;
         camera = Camera.main;
-    }
-    private void OnMouseDown()
-    {
-        Debug.Log("Mouse Click Detected");
-        GameController.score += 10;
     }
     private void OnMouseDown()
     {
@@ -68,5 +64,6 @@ public class BirdAI : MonoBehaviour
                 direction.x = -direction.x;
             }
         }
+    }
 }
 
